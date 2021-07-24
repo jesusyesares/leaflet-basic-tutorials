@@ -26,7 +26,7 @@
         }).addTo(mymap);
 
         /* After add the map is where I can add markers */
-        var marker = L.marker([51.5, -0.09]).addTo(mymap);
+        var marker = L.marker([51.5, -0.09]).addTo(mymap).bindPopup('<b>Hello world!</b><br>I am a popup.').openPopup();
 
         /* Now I'm going to add a circle and a polygon */
         var circle = L.circle([51.508, -0.11], {
@@ -34,14 +34,22 @@
             fillColor: '#f03',
             fillOpacity: 0.5,
             radius: 500
-        }).addTo(mymap);
+        }).addTo(mymap).bindPopup('I am a circle.');
 
         /* Now I Add a Polygon */
         var polygon = L.polygon([
             [51.509, -0.08],
             [51.503, -0.06],
             [51.51, -0.047]
-        ]).addTo(mymap);
+        ]).addTo(mymap).bindPopup('I am a polygon');
+
+        /* Working with popups */
+        /* we use the bindPopup method after addTo (see above) */
+        var popup = L.popup()
+            .setLatLng([51.515, -0.07])
+            .setContent('I am a standalone popup')
+            .openOn(mymap);
+
     </script>
 </body>
 </html>
