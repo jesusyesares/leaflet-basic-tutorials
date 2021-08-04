@@ -16,6 +16,7 @@
 <body>
     <div id="map"></div>
 
+    <!-- Next we load the data for the choropleth map -->
     <script type="text/javascript" src="assets/us-states.js"></script>
 
     <script type="text/javascript">
@@ -30,6 +31,7 @@
             zoomOffset: -1
         }).addTo(map);
 
+        // Now we add the basic choropleth map
         var geojson = L.geoJson(statesData).addTo(map);
     </script>
 </body>
